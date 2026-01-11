@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storeedxson | Cheats & Mods</title>
+  <style>
+    :root {
+      --bg: #05080f;
+      --card: #0b1220;
+      --neon: #00bfff;
+      --text: #e6f1ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #06142b, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    #particles{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+    header {
+      background: #000814;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--neon);
+      box-shadow: 0 0 20px rgba(0,191,255,0.6);
+      animation: glow 3s infinite alternate;
+    }
+    header h1 {
+      margin: 0;
+      color: var(--neon);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px var(--neon);
+    }
+    nav { margin-top: 10px; }
+    nav a {
+      color: var(--text);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      background: var(--neon);
+      transition: width .3s;
+    }
+    nav a:hover::after { width: 100%; }section { padding: 40px 20px; }
+.hero { text-align: center; padding: 80px 20px; }
+.hero h2 { color: var(--neon); font-size: 2.5em; text-shadow: 0 0 15px var(--neon); }
+
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card {
+  background: linear-gradient(180deg, #0b1220, #060b18);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #0a2540;
+  box-shadow: 0 0 15px rgba(0,191,255,0.25);
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0,191,255,0.7);
+}
+.card h3 { color: var(--neon); text-shadow: 0 0 8px var(--neon); }
+.btn {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,191,255,0.4);
+  transition: all .25s;
+}
+.btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 25px rgba(0,191,255,0.9); }
+footer {
+  background: #000814;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--neon);
+  box-shadow: 0 0 20px rgba(0,191,255,0.6);
+}
+@keyframes glow { from { box-shadow: 0 0 10px rgba(0,191,255,.4);} to { box-shadow: 0 0 30px rgba(0,191,255,.9);} }
+
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas><header>
+  <h1>Storeedxson</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#carrito">Carrito</a>
+  </nav>
+</header><section id="inicio" class="hero">
+  <h2>Cheats & Mods Premium</h2>
+  <p>Hologramas, Aimbot, WallHack y más — estilo minimalista neón</p>
+</section><section id="productos">
+  <h2 style="color:var(--neon)">Productos</h2>
+  <div class="products">
+    <div class="card"><h3>Holograma</h3><p>Visual premium</p><button class="btn" onclick="agregar('Holograma',10)">Agregar</button></div>
+    <div class="card"><h3>Aimbot</h3><p>Precisión avanzada</p><button class="btn" onclick="agregar('Aimbot',15)">Agregar</button></div>
+    <div class="card"><h3>Wall Hack</h3><p>Visión total</p><button class="btn" onclick="agregar('Wall Hack',12)">Agregar</button></div>
+    <div class="card"><h3>Texturas</h3><p>Mejora gráfica</p><button class="btn">Agregar</button></div>
+    <div class="card"><h3>Drip Client</h3><p>Cliente exclusivo</p><button class="btn">Agregar</button></div>
+    <div class="card"><h3>BR Mods</h3><p>Mods Battle Royale</p><button class="btn">Agregar</button></div>
+    <div class="card"><h3>Drip Client Root</h3><p>Acceso avanzado</p><button class="btn">Agregar</button></div>
+    <div class="card"><h3>HG Cheats</h3><p>Pack completo</p><button class="btn">Agregar</button></div>
+  </div>
+</section><section id="contacto">
+  <h2 style="color:var(--neon)">Contacto</h2>
+  <p>Email: soporte@storeedxson.com</p>
+  <p>Pagos aceptados: PayPal | Yape</p>
+</section><section id="carrito">
+  <h2 style="color:var(--neon)">Carrito</h2>
+  <div id="listaCarrito"></div>
+  <p>Total: $<span id="total">0.00</span></p>  <h3 style="color:var(--neon)">Pagos</h3>
+  <div id="paypal">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="lemae5405@gmail.com">
+    <input type="hidden" name="item_name" value="Servicio Digital Storeedxson">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="amount" id="paypalAmount" value="0">
+    <button class="btn" type="submit">Pagar con PayPal</button>
+  </form>
+</div>
+</section><footer>
+  <p>© 2026 Storeedxson — Todos los derechos reservados</p>
+  <div style="margin-top:10px">
+    <a class="btn" href="https://wa.me/593991348802?text=Hola%20Storeedxson%2C%20ya%20realic%C3%A9%20el%20pago%20por%20PayPal%20y%20necesito%20la%20entrega%20del%20servicio.%20Gracias" target="_blank">WhatsApp Soporte 1</a>
+    <a class="btn" href="https://wa.me/18768375254?text=Hola%20Storeedxson%2C%20ya%20realic%C3%A9%20el%20pago%20por%20PayPal%20y%20necesito%20la%20entrega%20del%20servicio.%20Gracias" target="_blank">WhatsApp Soporte 2</a>
+  </div>
+</footer><script>
+// --- CARRITO BÁSICO ---
+let carrito = [];
+
+function agregar(nombre, precio) {
+  carrito.push({ nombre, precio });
+  renderCarrito();
+}
+
+function eliminar(i) {
+  carrito.splice(i, 1);
+  renderCarrito();
+}
+
+function total() {
+  return carrito.reduce((s, p) => s + p.precio, 0).toFixed(2);
+}
+
+function renderCarrito() {
+  const box = document.getElementById('listaCarrito');
+  if (!box) return;
+  box.innerHTML = '';
+  carrito.forEach((p, i) => {
+    const div = document.createElement('div');
+    div.innerHTML = `${p.nombre} - $${p.precio} <button onclick=\"eliminar(${i})\">X</button>`;
+    box.appendChild(div);
+  });
+  const t = total();
+  document.getElementById('total').innerText = t;
+  const amt = document.getElementById('paypalAmount');
+  if (amt) amt.value = t;
+} - $${p.precio} <button onclick="eliminar(${i})">X</button>`;
+    box.appendChild(div);
+  });
+  document.getElementById('total').innerText = total();
+}
+</script><script>
+// --- PARTICULAS NEON ---
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let w, h;
+function resize(){ w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+window.addEventListener('resize', resize); resize();
+
+const particles = Array.from({length: 90}, () => ({
+  x: Math.random()*w,
+  y: Math.random()*h,
+  vx: (Math.random()-.5)*0.6,
+  vy: (Math.random()-.5)*0.6,
+  r: Math.random()*2+1
+}));
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  for(let i=0;i<particles.length;i++){
+    const p = particles[i];
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>w) p.vx*=-1;
+    if(p.y<0||p.y>h) p.vy*=-1;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,191,255,.8)';
+    ctx.shadowBlur=12; ctx.shadowColor='#00bfff';
+    ctx.fill();
+    for(let j=i+1;j<particles.length;j++){
+      const q=particles[j];
+      const d=Math.hypot(p.x-q.x,p.y-q.y);
+      if(d<120){
+        ctx.strokeStyle='rgba(0,191,255,'+(1-d/120)+')';
+        ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script></html>
